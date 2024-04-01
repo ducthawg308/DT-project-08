@@ -18,13 +18,6 @@
     @include abstracts.breakpoint(sm){
         padding: 16px 0;
     }
-
-    &__more{
-        display: none;
-        @include abstracts.breakpoint(lg){
-            display: block;
-        }
-    }
 }
 
 .navbar{
@@ -35,17 +28,68 @@
     }
     
     @include abstracts.breakpoint(lg){
+        position: fixed;
+        inset: 0 50% 0 0;
+        background-color: white;
+        margin-left: 0;
+        z-index: 9;
+        padding: 20px 0;
+        translate: -100%;
+        transition: translate 0.5s;
+
+        &.show{
+            translate: 0;
+        }
+
+        &.show ~ &__overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__overlay{
+        visibility: hidden;
+        opacity: 0;
+
+        @include abstracts.breakpoint(lg){
+            background-color: rgba($color: #000000, $alpha: 0.4);
+            position: fixed;
+            inset: 0;
+            z-index: 8;
+            transition: opacity visibility;
+            transition-duration: 0.5s;
+        }
+    }
+
+    &__close-btn{
         display: none;
+
+        @include abstracts.breakpoint(lg){
+            display: block;
+            padding: 10px 40px;
+        }
     }
 
     &__list{
         display: flex;
         align-items: center;
+
+        @include abstracts.breakpoint(lg){
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__item{
         &:hover .dropdown{
             display: block;
+        }
+
+        @include abstracts.breakpoint(lg){
+            &:hover .dropdown{
+                display: none;
+            }
+            width: 100%;
         }
     }
 
@@ -58,6 +102,13 @@
         font-weight: 500;
         line-height: 146.667%;
         height: 50px;
+
+        @include abstracts.breakpoint(lg){
+            padding: 0 40px;
+            font-size: 1.6rem;
+            line-height: 150%;
+            justify-content: space-between;
+        }
     }
 
     &__arrow{
@@ -82,10 +133,6 @@
         background: var(--top-act-group-bg-color);
         min-width: 50px;
         height: 50px;
-
-        @include abstracts.breakpoint(md){
-            display: none;
-        }
     }
 
     &__group--single{
