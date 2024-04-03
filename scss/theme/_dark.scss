@@ -17,4 +17,8 @@ html.dark{
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(5%) saturate(2367%) hue-rotate(186deg) brightness(98%) contrast(90%);
     --top-menu-border-color: #171C28;
     --menu-column-icon-color: brightness(0) saturate(100%) invert(97%) sepia(26%) saturate(677%) hue-rotate(203deg) brightness(107%) contrast(97%);
+
+    // Sidebar
+    --sidebar-bg: #292E39;
+    --sidebar-shadow-color:box-shadow: rgba(23, 28, 40, 0.40);
 }
