@@ -4,7 +4,7 @@ html{
     --icon-color: brightness(0) saturate(100%) invert(6%) sepia(14%) saturate(6147%) hue-rotate(228deg) brightness(90%) contrast(93%);
     --body-bg: #F6F6F6;
     --header-bg-color: #EEEEEE;
-    @include abstracts.breakpoint(lg){
+    @include abstracts.screen(lg){
         --header-bg-color: #fff;
         --header-shadow-color:rgba(237, 237, 246, 0.20);
     }
