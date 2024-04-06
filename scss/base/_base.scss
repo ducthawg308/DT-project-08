@@ -1,4 +1,6 @@
-    *, ::after, ::before{
+@use '../abstracts';
+
+*, ::after, ::before{
     box-sizing: border-box;
 }
 
@@ -22,6 +24,8 @@ button{
     border: none;
     outline: none;
     background: transparent;
+    padding: 0;
+    cursor: pointer;
 }
 
 a,button, input, textarea, select{
@@ -32,4 +36,11 @@ a,button, input, textarea, select{
 
 .icon{
     filter: var(--icon-color);
+}
+
+.container{
+    @include abstracts.screen(sm){
+        padding-left: 20px !important; 
+        padding-right: 20px !important;
+    }
 }
