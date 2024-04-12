@@ -1251,6 +1251,8 @@ html.dark {
   --filter-form-shadow:rgba(0, 0, 0, 0.40);
   --filter-form-bg-tag: #171C28;
   --filter-form-arrow:brightness(0) saturate(100%) invert(17%) sepia(5%) saturate(2367%) hue-rotate(186deg) brightness(98%) contrast(90%);
+  --footer-bg-color: var(--header-bg-color);
+  --footer-text-color: #9e9da6;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1281,6 +1283,8 @@ html {
   --filter-form-bg: #fff;
   --filter-form-shadow:rgba(200, 200, 200, 0.40);
   --filter-form-bg-tag: #F8F8FB;
+  --footer-bg-color: var(--header-bg-color);
+  --footer-text-color: #9e9da6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1530,16 +1534,174 @@ html {
   margin-left: auto;
 }
 
+.footer {
+  padding: 60px 0;
+  margin-top: 60px;
+  background-color: var(--footer-bg-color);
+}
+.footer__row {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr 1fr 1fr 1.5fr;
+  gap: 60px;
+}
+@media (max-width: 991.98px) {
+  .footer__row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 991.98px) {
+  .footer__logo {
+    margin-left: 0;
+  }
+}
+.footer__heading {
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+.footer__list {
+  margin-top: 18px;
+}
+.footer__link, .footer__text {
+  padding: 8px 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+@media (max-width: 991.98px) {
+  .footer__text {
+    width: min(400px, 100%);
+  }
+}
+.footer__link {
+  display: block;
+}
+.footer__link:hover {
+  color: #0071dc;
+}
+.footer__label {
+  font-weight: 500;
+  margin-top: 20px;
+}
+.footer__desc {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-top: 30px;
+}
+@media (max-width: 991.98px) {
+  .footer__desc {
+    width: min(400px, 100%);
+  }
+}
+.footer__help-text {
+  font-size: 1.4rem;
+  margin-top: 40px;
+}
+.footer__form {
+  padding: 16px 0;
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 1199.98px) {
+  .footer__form {
+    flex-direction: column;
+  }
+}
+@media (max-width: 991.98px) {
+  .footer__form {
+    flex-direction: row;
+  }
+}
+.footer__input {
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.footer__input::placeholder {
+  font-weight: 400;
+}
+@media (max-width: 991.98px) {
+  .footer__input {
+    width: 40%;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__input {
+    width: 50%;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer__input {
+    flex: 1;
+  }
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+@media (max-width: 767.98px) {
+  .footer__bottom {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+}
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 6px;
+  filter: grayscale(50%);
+  transition: translate, filter;
+  transition-duration: 0.3s;
+}
+.footer__social-link:hover {
+  filter: grayscale(0);
+  translate: 0 -3px;
+}
+.footer__social-link--facebook {
+  background-color: #4863a9;
+}
+.footer__social-link--youtube {
+  background-color: #f00;
+}
+.footer__social-link--tiktok {
+  background-color: #000;
+}
+.footer__social-link--twitter {
+  background-color: #4999e6;
+}
+.footer__social-link--linkedin {
+  background-color: #2f71ab;
+}
+.footer__social-icon {
+  width: 14px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(99%) contrast(99%);
+}
+
+.copyright,
+.footer__text {
+  color: var(--footer-text-color);
+}
+
+.copyright {
+  font-size: 1.4rem;
+}
+
 .logo {
   display: flex;
   align-items: center;
   gap: 14px;
-}
-@media (max-width: 991.98px) {
-  .logo {
-    gap: 10px;
-    margin-left: 40px;
-  }
 }
 @media (max-width: 767.98px) {
   .logo {
@@ -1552,14 +1714,25 @@ html {
   line-height: 145.455%;
 }
 @media (max-width: 991.98px) {
-  .logo__title {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 991.98px) {
   .logo__img {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .top-bar__logo {
+    margin-left: 40px;
+    gap: 10px !important;
+  }
+}
+.top-bar__logo-title {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 991.98px) {
+  .footer__logo {
+    margin-left: 0;
   }
 }
 

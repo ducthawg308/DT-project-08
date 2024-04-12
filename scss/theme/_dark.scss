@@ -40,4 +40,8 @@ html.dark{
     --filter-form-shadow:rgba(0, 0, 0, 0.40);
     --filter-form-bg-tag: #171C28;
     --filter-form-arrow:brightness(0) saturate(100%) invert(17%) sepia(5%) saturate(2367%) hue-rotate(186deg) brightness(98%) contrast(90%);
+
+    // Footer
+    --footer-bg-color: var(--header-bg-color);
+    --footer-text-color: #9e9da6;
 }
